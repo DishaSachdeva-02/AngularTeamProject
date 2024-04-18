@@ -1,0 +1,19 @@
+<div>
+    <ul>
+        <li *ngFor="let membername of member">
+            <a routerLink="/detail/{{membername.member_id}}">
+                <span>{{membername.member_id}} </span>
+                <span>{{membername.name}}</span>
+            </a>
+            <button type="button" (click)="delete(membername)">Delete</button>
+        </li>
+    </ul>
+</div>
+<div>
+    <label for="name">Name:</label>
+    <input type="text" #memberName id="name">
+    <button type="button" (click)="add(memberName.value); memberName.value=''">Add..</button>
+</div>
+
+
+
